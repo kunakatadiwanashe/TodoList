@@ -11,6 +11,7 @@ const AddTodo = () => {
     if (title !== "") {
         await addDoc(collection(db, "todos"), {
             title,
+            timestamp: Date.now(),
             completed: false,
         });
         setTitle("");
